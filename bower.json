@@ -1,0 +1,25 @@
+{
+  "name": "report-composer-tool",
+  "version": "0.0.0",
+  "dependencies": {
+      "bootstrap-sass":"~3.3.5"
+    },
+  "homepage": "https://github.com/lucasduarte/report-composer-tool",
+  "authors": [
+    "Lucas Duarte <lucasduarte599@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ]
+}
