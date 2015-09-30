@@ -1,10 +1,11 @@
-@import 'normalize';
 $icon-font-path: "bootstrap-sass/assets/fonts/bootstrap/";
 @import "bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
 @import "bootstrap-sass/assets/stylesheets/bootstrap";
 
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700,600italic,400italic,600,300italic,300");
-
+@import 'navbar';
+@import 'flat_style';
+@import 'sidebar';
+/*
 * {
   margin: 0;
   padding: 0;
@@ -114,4 +115,20 @@ div#box .box-panel {
   padding: 15px;
   background-color: #fff;
   color: #333;
+}*/
+
+#wrapper {
+  padding-left: 225px;
+  height: 100vh;
+}
+
+#page-wrapper {
+  padding: 50px;
+  width: 100%;
+  height: 100vh;
+  background-color: #95a5a6;
+}
+
+.login-panel {
+  margin-top: 25%;
 }
