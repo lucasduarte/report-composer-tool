@@ -1,0 +1,5 @@
+- unless flash.empty?
+  - flash.each do |f|
+    javascript:
+      "#{type = f[0].gsub('alert', 'error').gsub('notice', 'info')}";
+      toastr['#{type}']('#{f[1]}', '#{type.capitalize}');
