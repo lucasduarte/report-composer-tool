@@ -1,0 +1,18 @@
+.panel-body
+  .row
+    .col-lg-6
+      = form_for(@connection) do |f|
+        .form-group
+          = f.label :name, 'Nome'
+          = f.text_field :name, :class => 'form-control'
+        .form-group
+          = f.label :provider, 'Conector'
+          = f.text_field :provider, :class => 'form-control'  
+        .form-group
+          = f.label :connection_string, 'String de Conexão'
+          = f.text_field :connection_string, :class => 'form-control' 
+        .form-group
+          = f.label :timeout
+          = f.text_field :timeout, :class => 'form-control'     
+        .form-group
+          = f.submit 'Confirmar', :class => 'btn btn-default'  

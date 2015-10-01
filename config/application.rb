@@ -8,6 +8,8 @@ Bundler.require(*Rails.groups)
 
 module ReportComposerTool
   class Application < Rails::Application
+
+    config.autoload_paths << Rails.root.join('datatables')
     
     # Bower asset paths
     root.join('vendor', 'assets', 'components').to_s.tap do |bower_path|

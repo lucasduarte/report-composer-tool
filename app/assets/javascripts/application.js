@@ -10,8 +10,10 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
+//= require jquery/dist/jquery
+//= require jquery-ujs/src/rails
+//= require dataTables/media/js/jquery.dataTables
+//= require dataTables/media/js/dataTables.bootstrap
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sass/assets/javascripts/bootstrap-sprockets

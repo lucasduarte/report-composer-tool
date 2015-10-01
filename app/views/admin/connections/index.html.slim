@@ -1,0 +1,39 @@
+div class="page-header" 
+  .row
+    .col-lg-10
+      h1 Conexões
+    .col-lg-2
+      = link_to new_connection_path, class: 'btn btn-primary pull-right' do
+        span class="glyphicon glyphicon-plus"
+        |   Nova Conexão    
+ol class="breadcrumb"
+  li 
+    span class="glyphicon glyphicon-user"
+    |   Administração
+  li 
+    span class="glyphicon glyphicon-flash"
+    |   Conexões
+div class="panel panel-default"
+  .panel-heading
+    span class="glyphicon glyphicon-menu-hamburger"
+    |   Lista de Conexões
+  .panel-body
+    .row
+      p class="pull-right"
+          
+    .row
+      .col-lg-12
+        .dataTable_wrapper
+          table class="table table-bordered table-hover table-striped" id="connections"  data-source="#{connections_url(format: "json")}"
+            thead
+              tr
+                th Nome
+                th Provedor
+                th String de Conexão
+                th Timeout
+            tbody  
+              = content_tag_for(:tr, @connections) do |connection|
+                td = connection.name
+                td = connection.provider
+                td = connection.connection_string
+                td = connection.timeout

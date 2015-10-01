@@ -1,0 +1,18 @@
+h1 class="page-header" Conexões
+ol class="breadcrumb"
+  li 
+    span class="glyphicon glyphicon-user"
+    = link_to '  Administração', '#'
+  li 
+    span class="glyphicon glyphicon-flash"
+    = link_to  '  Conexões', connections_path
+  li class="active" 
+    span class="glyphicon glyphicon-eye-open"
+    |   Exibir
+
+div class="panel panel-default"
+  .panel-heading
+    span class="glyphicon glyphicon-eye-open"
+    |   Dados da conexão
+  .panel-body
+    h3 = @connection.name  
