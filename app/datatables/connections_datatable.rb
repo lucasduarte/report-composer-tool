@@ -1,5 +1,5 @@
 class ConnectionsDatatable
-  delegate :params, :h, :link_to, to: :@view
+  delegate :params, :content_tag, :edit_connection_path, :destroy_connection_path, :link_to, to: :@view
 
   def initialize(view)
     @view = view
@@ -18,10 +18,19 @@ class ConnectionsDatatable
     def data
       connections.map do |connection|
         [
-          link_to(connection.name, connection),
+          connection.name,
           connection.provider,
           connection.connection_string,
-          connection.timeout
+          connection.timeout,
+          link_to(connection, class: 'btn btn-info') do
+            content_tag(:span, '', :class => "glyphicon glyphicon-info-sign")
+          end,
+          link_to(edit_connection_path(connection), class: 'btn btn-default') do
+            content_tag(:span, '', :class => "glyphicon glyphicon-edit")
+          end,
+          link_to(connection, class: 'btn btn-danger', method: :delete, data: { confirm: 'Tem certeza?' }) do
+            content_tag(:span, '', :class => "glyphicon glyphicon-trash")
+          end
         ]
       end
     end

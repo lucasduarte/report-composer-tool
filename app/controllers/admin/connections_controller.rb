@@ -30,7 +30,7 @@ class Admin::ConnectionsController < ApplicationController
 
   def update
     if @connection.update(connection_params)
-      redirect_to @site, notice: "Conexão atualizada com sucesso."
+      redirect_to @connection, notice: "Conexão atualizada com sucesso."
     else
       render :edit
     end  

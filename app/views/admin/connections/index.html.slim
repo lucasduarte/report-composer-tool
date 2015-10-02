@@ -1,4 +1,4 @@
-div class="page-header" 
+div class="page-header breadcrumb" 
   .row
     .col-lg-10
       h1 Conexões
@@ -9,7 +9,7 @@ div class="page-header"
 ol class="breadcrumb"
   li 
     span class="glyphicon glyphicon-user"
-    |   Administração
+    = link_to '  Administração', '#'
   li 
     span class="glyphicon glyphicon-flash"
     |   Conexões
@@ -24,16 +24,22 @@ div class="panel panel-default"
     .row
       .col-lg-12
         .dataTable_wrapper
-          table class="table table-bordered table-hover table-striped" id="connections"  data-source="#{connections_url(format: "json")}"
+          table class="table table-bordered table-hover table-striped" id="connections_table"  data-source="#{connections_url(format: "json")}"
             thead
               tr
                 th Nome
                 th Provedor
                 th String de Conexão
                 th Timeout
+                th 
+                th
+                th
             tbody  
               = content_tag_for(:tr, @connections) do |connection|
                 td = connection.name
                 td = connection.provider
                 td = connection.connection_string
                 td = connection.timeout
+                td 
+                td
+                td

@@ -1,7 +1,17 @@
-.panel-body
+.panel-body          
   .row
     .col-lg-6
-      = form_for(@connection) do |f|
+      = form_for(@connection, html: { role: "form" }) do |f|
+        .form-group
+          - if @connection.errors.any?
+            div class="alert alert-danger alert-dismissable" role="alert"
+              button type="button" class="close" data-dismiss="alert"
+                span aria-hidden="true" &times;
+                span class="sr-only"
+              h4 =  pluralize(@connection.errors.count, "Erro")
+              ul
+                - @connection.errors.full_messages.each do |msg|
+                  li = msg        
         .form-group
           = f.label :name, 'Nome'
           = f.text_field :name, :class => 'form-control'
@@ -14,5 +24,10 @@
         .form-group
           = f.label :timeout
           = f.text_field :timeout, :class => 'form-control'     
-        .form-group
-          = f.submit 'Confirmar', :class => 'btn btn-default'  
+        div class="form-group btn-toolbar"
+          = link_to connections_path, :class => 'btn btn-default' do
+            span class="glyphicon glyphicon-remove-sign"
+            |   Cancelar
+          = f.button :button, :class => 'btn btn-primary' do
+            span class="glyphicon glyphicon-floppy-disk"
+            |   Confirmar 

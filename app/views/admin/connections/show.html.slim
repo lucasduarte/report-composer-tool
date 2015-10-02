@@ -1,4 +1,4 @@
-h1 class="page-header" Conexões
+h1 class="page-header breadcrumb" Conexões
 ol class="breadcrumb"
   li 
     span class="glyphicon glyphicon-user"
@@ -15,4 +15,30 @@ div class="panel panel-default"
     span class="glyphicon glyphicon-eye-open"
     |   Dados da conexão
   .panel-body
-    h3 = @connection.name  
+    .col-lg-6
+      .row
+        div class="col-lg-3 text-right"
+          h3 = @connection.name  
+      .row
+        div class="col-lg-3 text-right"
+         strong Conector:
+        .col-lg-3 
+          = @connection.provider 
+      .row   
+        div class="col-lg-3 text-right"
+         strong String de Conexão:
+        .col-lg-3 
+          = @connection.connection_string 
+      .row    
+        div class="col-lg-3 text-right"
+         strong Timeout:
+        .col-lg-3 
+          = @connection.timeout
+      div class="row top15 btn-toolbar"  
+        = link_to connections_path, class: 'btn btn-default' do 
+            span class="glyphicon glyphicon-list-alt"
+            |   Voltar
+        = link_to edit_connection_path(@connection), class: 'btn btn-primary' do 
+          span class="glyphicon glyphicon-pencil"
+          |   Editar  
+
