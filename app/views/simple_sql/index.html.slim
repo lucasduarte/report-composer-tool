@@ -1,0 +1,51 @@
+div class="page-header breadcrumb" 
+  .row
+    .col-lg-10
+      h1 SQLs
+    .col-lg-2
+      = link_to new_simple_sql_path, class: 'btn btn-primary pull-right' do
+        span class="glyphicon glyphicon-plus"
+        |   Novo SQL    
+ol class="breadcrumb"
+  li 
+    span class="glyphicon glyphicon-dashboard"
+    = link_to '  Dashboard', '#'
+  li 
+    i class="fa fa-database"
+    |   SQLs
+div class="panel panel-default"
+  .panel-heading
+    span class="glyphicon glyphicon-menu-hamburger"
+    |   Lista de SQLs
+  .panel-body
+    .row
+      p class="pull-right"
+        = modal_helper simple_sql_index_path, 'Deseja realmente excluir?', 'Exclusão'          
+    .row
+      .col-lg-12
+        .dataTable_wrapper
+          table class="table table-bordered table-hover table-striped" id="simple_sqls_table"  data-source="#{simple_sql_index_url(format: "json")}"
+            thead
+              tr
+                th Descrição
+                th Conexão
+                th 
+                th
+                th
+            tbody  
+              = content_tag_for(:tr, @simple_sql) do |sql|
+                td = sql.description
+                td = sql.connection.name
+                td 
+                td
+                td
+
+javascript:
+  $('#app_modal').on('show.bs.modal', function(e) {
+
+    //get data-id attribute of the clicked element
+    var ssqlId = $(e.relatedTarget).data('simple-sql-id');
+    var path = "#{simple_sql_index_path}";
+    //change form action
+    $('#modal_form').attr('action', path + '/' + ssqlId);
+  });

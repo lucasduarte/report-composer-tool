@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   scope module: 'admin' do
     resources :connections
   end
+  resources :simple_sql
   root 'welcome#index'
 end

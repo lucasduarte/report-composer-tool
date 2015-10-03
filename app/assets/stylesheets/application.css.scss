@@ -7,16 +7,21 @@ $icon-font-path: "bootstrap-sass/assets/fonts/bootstrap/";
 @import 'flat_style';
 @import 'sidebar';
 @import 'toastr/toastr.scss';
+@import 'tabs';
+@import 'editor';
+
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 #wrapper {
   padding-left: 225px;
-  height: 100vh;
+  height: 100%;
 }
 
 #page-wrapper {
   padding: 50px;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-color: #95a5a6;
 }
 

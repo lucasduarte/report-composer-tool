@@ -17,7 +17,7 @@
           = f.text_field :name, :class => 'form-control'
         .form-group
           = f.label :provider, 'Conector'
-          = f.text_field :provider, :class => 'form-control'  
+          = f.select :provider, Connection::CONNECTORS,{}, {:class => 'form-control'}  
         .form-group
           = f.label :connection_string, 'String de Conexão'
           = f.text_field :connection_string, :class => 'form-control' 

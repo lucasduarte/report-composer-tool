@@ -18,6 +18,9 @@
 //= require_tree .
 //= require bootstrap-sass/assets/javascripts/bootstrap-sprockets
 //= require toastr/toastr
+//= require ace/ace
+//= require ace/mode-sql
+//= requice ace/theme-sqlserver
 
 toastr.options = {
   "closeButton": false,

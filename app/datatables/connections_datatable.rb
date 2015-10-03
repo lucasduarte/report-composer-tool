@@ -1,5 +1,5 @@
 class ConnectionsDatatable
-  delegate :params, :content_tag, :edit_connection_path, :destroy_connection_path, :link_to, to: :@view
+  delegate :params, :content_tag, :edit_connection_path, :destroy_connection_path, :connection_path, :link_to, :button_to, to: :@view
 
   def initialize(view)
     @view = view
@@ -28,8 +28,8 @@ class ConnectionsDatatable
           link_to(edit_connection_path(connection), class: 'btn btn-default') do
             content_tag(:span, '', :class => "glyphicon glyphicon-edit")
           end,
-          link_to(connection, class: 'btn btn-danger', method: :delete, data: { confirm: 'Tem certeza?' }) do
-            content_tag(:span, '', :class => "glyphicon glyphicon-trash")
+          content_tag(:button, class: 'btn btn-danger', 'data-toggle' => 'modal', 'data-target' => '#app_modal', 'data-connection-id' => connection.id) do
+            content_tag(:span, '', :class => "glyphicon glyphicon-trash") 
           end
         ]
       end
@@ -64,4 +64,4 @@ class ConnectionsDatatable
     def sort_direction
       params[:sSortDir_0] == "desc" ? "desc" : "asc"
     end
-  end
+end

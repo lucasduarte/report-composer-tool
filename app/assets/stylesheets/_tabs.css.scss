@@ -1,0 +1,22 @@
+.div-tabs {
+  background-color: #fff;
+  border-color: #ddd;
+  border-width: 1px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  position: relative;
+  padding: 45px 15px 15px;
+  margin: 0 -15px 15px;
+}
+
+.div-tabs:after {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #959595;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  content: "OPÇÔES";
+}
