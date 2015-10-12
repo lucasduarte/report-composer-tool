@@ -12,15 +12,15 @@
 //
 //= require jquery/dist/jquery
 //= require jquery-ujs/src/rails
-//= require dataTables/media/js/jquery.dataTables
-//= require dataTables/media/js/dataTables.bootstrap
+//= require datatables/media/js/jquery.dataTables
+//= require datatables/media/js/dataTables.bootstrap
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sass/assets/javascripts/bootstrap-sprockets
 //= require toastr/toastr
 //= require ace/ace
 //= require ace/mode-sql
-//= requice ace/theme-sqlserver
+//= require ace/theme-sqlserver
 
 toastr.options = {
   "closeButton": false,
@@ -39,3 +39,9 @@ toastr.options = {
   "showMethod": "fadeIn",
   "hideMethod": "fadeOut"
 }
+
+$( document ).ajaxComplete(function(event, request) {
+    var msg = request.getResponseHeader('X-Message');
+    var type = request.getResponseHeader('X-Message-Type');
+    toastr[type](msg, type.charAt(0).toUpperCase() + type.slice(1).toLowerCase());
+});

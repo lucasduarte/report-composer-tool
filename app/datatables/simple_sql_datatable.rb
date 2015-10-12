@@ -20,9 +20,6 @@ class SimpleSqlDatatable
         [
           simple_sql.description,
           simple_sql.connection.name,
-          link_to(simple_sql, class: 'btn btn-info') do
-            content_tag(:span, '', :class => "glyphicon glyphicon-info-sign")
-          end,
           link_to(edit_simple_sql_path(simple_sql), class: 'btn btn-default') do
             content_tag(:span, '', :class => "glyphicon glyphicon-edit")
           end,
